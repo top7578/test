@@ -21,36 +21,34 @@ import java.util.List;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Bean
-    public Docket restAPI() {
+  @Bean
+  public Docket restAPI() {
 
-        // 공통 응답 메시지
-        List<ResponseMessage> responseMessages = new ArrayList<>();
-        responseMessages.add(new ResponseMessageBuilder().code(200).message("OK").build());
-        responseMessages.add(
-                new ResponseMessageBuilder().code(401).message("Unauthorized").build());
-        responseMessages.add(new ResponseMessageBuilder().code(403).message("Forbidden").build());
-        responseMessages.add(new ResponseMessageBuilder().code(404).message("Not Found").build());
-        responseMessages.add(
-                new ResponseMessageBuilder().code(500).message("Server Error").build());
+    // 공통 응답 메시지
+    List<ResponseMessage> responseMessages = new ArrayList<>();
+    responseMessages.add(new ResponseMessageBuilder().code(200).message("OK").build());
+    responseMessages.add(new ResponseMessageBuilder().code(401).message("Unauthorized").build());
+    responseMessages.add(new ResponseMessageBuilder().code(403).message("Forbidden").build());
+    responseMessages.add(new ResponseMessageBuilder().code(404).message("Not Found").build());
+    responseMessages.add(new ResponseMessageBuilder().code(500).message("Server Error").build());
 
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.linklip"))
-                .paths(PathSelectors.any())
-                .build()
-                .globalResponseMessage(RequestMethod.GET, responseMessages)
-                .globalResponseMessage(RequestMethod.POST, responseMessages)
-                .globalResponseMessage(RequestMethod.PUT, responseMessages)
-                .globalResponseMessage(RequestMethod.DELETE, responseMessages);
-    }
+    return new Docket(DocumentationType.SWAGGER_2)
+        .apiInfo(apiInfo())
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("com.linklip"))
+        .paths(PathSelectors.any())
+        .build()
+        .globalResponseMessage(RequestMethod.GET, responseMessages)
+        .globalResponseMessage(RequestMethod.POST, responseMessages)
+        .globalResponseMessage(RequestMethod.PUT, responseMessages)
+        .globalResponseMessage(RequestMethod.DELETE, responseMessages);
+  }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Linklip Spring Boot REST API")
-                .version("1.0.0")
-                .description("Linklip의 swagger api입니다.")
-                .build();
-    }
+  private ApiInfo apiInfo() {
+    return new ApiInfoBuilder()
+        .title("Linklip Spring Boot REST API")
+        .version("1.0.0")
+        .description("Linklip의 swagger api입니다.")
+        .build();
+  }
 }
