@@ -1,10 +1,13 @@
 package com.linklip.linklipserver.controller;
 
 import com.linklip.linklipserver.domain.Content;
-import com.linklip.linklipserver.dto.ServerResponse;
 import com.linklip.linklipserver.dto.SaveLinkRequest;
+import com.linklip.linklipserver.dto.ServerResponse;
 import com.linklip.linklipserver.service.ContentService;
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
