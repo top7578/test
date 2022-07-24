@@ -59,4 +59,10 @@ jobs:
 
       ## code style check
       - name: Check code style with Google-Java-Format
-        run: ./gradlew verGJF
+        uses: axel-op/googlejavaformat-action@v3
+        with:
+          args: "--set-exit-if-changed"
+
+
+#      - name: Check code style with Google-Java-Format
+#        run: ./gradlew verifyGoogleJavaForma
