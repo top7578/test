@@ -1,7 +1,8 @@
 package com.linklip.linklipserver.dto;
 
-import javax.validation.constraints.NotEmpty;
 import lombok.Data;
+
+import javax.validation.constraints.NotEmpty;
 
 @Data
 public class SaveLinkRequest {
