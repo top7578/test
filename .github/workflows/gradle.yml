@@ -59,7 +59,7 @@ jobs:
 
       ## code style check
       - name: Check code style with Google-Java-Format
-      - uses: axel-op/googlejavaformat-action@v3
+        uses: axel-op/googlejavaformat-action@v3
         with:
           args: "--skip-sorting-imports --replace"
 
