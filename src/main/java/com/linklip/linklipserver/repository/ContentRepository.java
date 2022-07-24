@@ -1,10 +1,9 @@
 package com.linklip.linklipserver.repository;
 
 import com.linklip.linklipserver.domain.Content;
+import javax.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-
-import javax.persistence.EntityManager;
 
 @Repository
 @RequiredArgsConstructor
